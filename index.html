@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepUp Fitness Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Welcome Page -->
+    <section id="welcomePage" class="welcome-page">
+        <div class="welcome-card">
+            <h1>💜 StepUp</h1>
+            <h2>Welcome to Your Fitness Journey!</h2>
+            <p>Enter your name to get started.</p>
+
+            <form id="nameForm">
+                <input
+                    type="text"
+                    id="userName"
+                    placeholder="Enter your name"
+                    required
+                    maxlength="40"
+                >
+                <button type="submit">Get Started →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Fitness Tracker Page -->
+    <main id="trackerPage" class="container" hidden>
+
+        <header class="header">
+            <div>
+                <h1>💜 StepUp Fitness Tracker</h1>
+                <p id="greeting">Welcome!</p>
+                <p id="todayDate"></p>
+            </div>
+            <button id="changeNameButton" class="secondary-button">
+                Change Name
+            </button>
+        </header>
+
+        <section class="stats">
+            <div class="card">
+                <h3>👟 Steps</h3>
+                <p id="stepsDisplay">0</p>
+                <small id="stepsCaption">0% of your goal</small>
+                <div class="progress">
+                    <div id="stepsProgress"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🔥 Calories</h3>
+                <p id="caloriesDisplay">0</p>
+                <small>Calories burned</small>
+            </div>
+
+            <div class="card">
+                <h3>💧 Water</h3>
+                <p><span id="waterDisplay">0</span> glasses</p>
+                <button id="addWater">+ Add Glass</button>
+                <button id="removeWater" class="secondary-button">− Remove</button>
+            </div>
+        </section>
+
+        <section class="card form-card">
+            <h2>Record Your Activity</h2>
+
+            <form id="activityForm">
+                <label for="stepsInput">Steps completed</label>
+                <input type="number" id="stepsInput" min="0"
+                       placeholder="Enter your steps" required>
+
+                <label for="caloriesInput">Calories burned</label>
+                <input type="number" id="caloriesInput" min="0"
+                       placeholder="Enter calories burned" required>
+
+                <button type="submit">Save Activity</button>
+            </form>
+
+            <p id="activityMessage" aria-live="polite"></p>
+        </section>
+
+        <section class="card form-card">
+            <h2>🎯 Daily Step Goal</h2>
+
+            <form id="goalForm">
+                <label for="goalInput">Your daily goal</label>
+                <input type="number" id="goalInput" min="1"
+                       value="10000" required>
+                <button type="submit">Update Goal</button>
+            </form>
+
+            <p>Current goal: <strong id="goalDisplay">10000</strong> steps</p>
+        </section>
+
+        <button id="resetButton" class="reset-button">
+            Reset Today's Activity
+        </button>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
